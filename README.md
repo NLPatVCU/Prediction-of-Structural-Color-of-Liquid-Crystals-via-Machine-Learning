@@ -6,7 +6,8 @@ This GitHub repository contains the machine learning regression and classificati
 
 1. [About](#about)
 2. [License](#license)
-3. [Citation](#citation)
+3. [Usage](#usage)
+4. [Citation](#citation)
 
 ## About
 
@@ -19,6 +20,9 @@ Key findings of the study include the identification of decision tree regression
 ## License
 
 This project is licensed under the [MIT License](https://opensource.org/licenses/MIT) - see the [LICENSE](LICENSE) file for details.
+
+## Usage
+Please see the header information in each of the python scripts in the code directory. The colours data is located in the data directory. 
 
 ## Citation
 
