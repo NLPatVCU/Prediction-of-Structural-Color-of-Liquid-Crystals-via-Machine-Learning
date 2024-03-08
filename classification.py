@@ -1,3 +1,21 @@
+"""
+File: classification.py
+
+Author: Bridget McInnes
+
+Date: October 2023
+
+Description: This script performs a ten-fold cross validaiton using a decision tree over
+             the colours data and outputs the best pruned decision tree
+
+Usage: python classification.py <colours csv file> <fig output file>
+
+Output: Classification Accuracy for each fold and the best pruned decision tree. 
+
+Example:
+  python3 classification.py colours_mlr_expanded.csv figure.png 
+"""
+
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -13,8 +31,11 @@ from sklearn.metrics import precision_score, recall_score, f1_score
 from sklearn.metrics import mean_squared_error
 from sklearn.metrics import r2_score
 
+from sys import argv
+
 # load dataset
-dataset = np.loadtxt('colours_mlr_expanded_bagged.csv', delimiter=',')
+dataset = np.loadtxt(argv[1], delimiter=',')
+#dataset = np.loadtxt('colours_mlr_expanded_bagged.csv', delimiter=',')
 
 # Randomly shuffle the elements in the dataset
 np.random.shuffle(dataset)
@@ -38,7 +59,7 @@ for train_index, test_index in kf.split(X):
     X_train, X_test = X[train_index], X[test_index]
     y_train, y_test = y[train_index], y[test_index]
 
-    print(X_train)
+    #print(X_train)
     # Split data into training and testing sets
     #X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.1, random_state=42)
 
@@ -79,10 +100,10 @@ for train_index, test_index in kf.split(X):
     # Increment the fold number
     fold += 1
 
-print(l_xtrain.shape)
-print(l_ytrain.shape)
-print(l_xtest.shape)
-print(l_ytest.shape)
+#print(l_xtrain.shape)
+#print(l_ytrain.shape)
+#print(l_xtest.shape)
+#print(l_ytest.shape)
 
 # Pruning using cost-complexity pruning
 path = model.cost_complexity_pruning_path(l_xtrain, l_ytrain)
@@ -105,7 +126,7 @@ best_alpha = ccp_alphas[acc_scores.index(max(acc_scores))]
 feature_names = ["COC", "CC", "CP"]
 plt.figure(figsize=(20, 15))
 plot_tree(best_tree, feature_names=feature_names, filled=True)
-plt.savefig('decision_tree_classification.png', dpi=300)
+plt.savefig(argv[2], dpi=300)
 
 
 
