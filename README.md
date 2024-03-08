@@ -28,13 +28,14 @@ Please see the header information in each of the python scripts in the code dire
 
 If you use this code or find it helpful in your research, please cite the following article:
 
-@article{nguyen2023prediction,
-title={Prediction of the Structural Color of Liquid Crystals via Machine Learning},
-author={Nguyen, Andrew T and Childs, Heather M and Salter, William M and Filippas, Afroditi V and McInnes, Bridget T and Senecal, Kris and Lawton, Timothy J and D’Angelo, Paola A and Zukas, Walter and Alexander, Todd E and others},
-journal={Liquids},
-volume={3},
-number={4},
-pages={440--455},
-year={2023},
-publisher={MDPI}
-}
+[@article{nguyen2023prediction,
+  title={Prediction of the Structural Color of Liquid Crystals via Machine Learning},
+  author={Nguyen, Andrew T and Childs, Heather M and Salter, William M and Filippas, Afroditi V and McInnes, Bridget T and Senecal, Kris and Lawton, Timothy J and D’Angelo, Paola A and Zukas, Walter and Alexander, Todd E and others},
+  journal={Liquids},
+  volume={3},
+  number={4},
+  pages={440--455},
+  year={2023},
+  publisher={MDPI}
+}]
+
